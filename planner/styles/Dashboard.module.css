@@ -1,0 +1,71 @@
+.header {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.widget {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.widgetIcon {
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widgetIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.widget h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.widget p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.subtle {
+    font-size: 0.9rem;
+    opacity: 0.6 !important;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progressBar {
+    height: 100%;
+    background: var(--text-color);
+    border-radius: 4px;
+}

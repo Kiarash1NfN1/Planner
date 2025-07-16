@@ -1,0 +1,61 @@
+.settingsModal {
+    max-width: 500px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.section h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.section label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.section input {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: var(--text-color);
+    width: 100%;
+}
+
+.section input:disabled {
+    opacity: 0.5;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.saveButton {
+    background: var(--active-menu-bg);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signOutButton {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+}

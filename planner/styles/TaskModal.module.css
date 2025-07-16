@@ -1,0 +1,88 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--background-end);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid var(--glass-border);
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    opacity: 1;
+}
+
+.titleInput {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0;
+    width: 100%;
+}
+
+.titleInput:focus {
+    outline: none;
+}
+
+.section h4 {
+    margin: 0 0 0.5rem 0;
+    opacity: 0.8;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 100px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.actions {
+    margin-top: auto;
+}
+
+.deleteButton {
+    background: #ff4d4d20;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d50;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

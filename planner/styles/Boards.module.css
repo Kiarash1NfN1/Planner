@@ -1,0 +1,153 @@
+/* Replace the existing .boardContainer style in styles/Boards.module.css */
+.boardContainer {
+    display: flex;
+    gap: 1rem;
+    /* Tighter gap */
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    /* More robust height calculation for different screen sizes */
+    height: calc(100vh - 8rem);
+    min-height: 400px;
+}
+
+/* Custom scrollbar for a better look */
+.boardContainer::-webkit-scrollbar {
+    height: 12px;
+}
+
+.boardContainer::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 6px;
+}
+
+.boardContainer::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.column {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--glass-border);
+}
+
+.columnTitle {
+    padding: 0 0.5rem 1rem 0.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.taskList {
+    flex-grow: 1;
+    min-height: 100px;
+    /* Important for empty droppable areas */
+    padding: 0 0.5rem;
+    overflow-y: auto;
+}
+
+.taskCard {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taskCard:hover {
+    border-color: var(--glass-border);
+}
+
+/* Add to styles/Boards.module.css */
+
+.boardListContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.boardCard {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boardCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.boardCard h3 {
+    margin: 0;
+}
+
+.newBoardCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0.7;
+}
+
+.boardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.boardHeader h2 {
+    margin: 0;
+}
+
+.backButton {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addTaskButton,
+.addColumnButton {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    padding: 0.8rem;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.addTaskButton:hover,
+.addColumnButton:hover {
+    opacity: 1;
+}
+
+.addColumnButton {
+    flex-shrink: 0;
+    width: 320px;
+    height: fit-content;
+}
+
+.dragging {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: rotate(3deg);
+    /* Example lift effect */
+}

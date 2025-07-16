@@ -1,0 +1,254 @@
+/* styles/Home.module.css */
+
+/* The :root and [data-theme='dark'] blocks have been removed from here. */
+
+/* Animated Gradient Background & Container */
+.container {
+    display: flex;
+    min-height: 100vh;
+    /* The CSS variables will work because they are loaded globally now */
+    background: linear-gradient(-45deg, var(--background-start), var(--background-end), #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    transition: color 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* All other styles (.sidebar, .menu, .card, etc.) remain the same */
+.sidebar {
+    width: 240px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    overflow-x: auto;
+}
+
+.logo h2 {
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.menu {
+    flex-grow: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background: var(--hover-bg);
+}
+
+.menu li a.active {
+    background: var(--active-menu-bg);
+    font-weight: bold;
+}
+
+.themeToggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.themeToggle button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 3rem;
+    overflow: auto;
+}
+
+.header {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.glassPanel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    cursor: grab;
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* styles/Home.module.css */
+
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.5rem; /* Tighter padding */
+      border-right: none;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .logo {
+      display: none; /* Hide logo text on mobile */
+    }
+  
+    .menu {
+      flex-grow: 1;
+    }
+  
+    .menu ul {
+      display: flex;
+      justify-content: center; /* Center icons */
+    }
+  
+    .menu ul li button {
+      padding: 0.8rem; /* Make buttons more square */
+      margin: 0 0.2rem;
+    }
+    
+    .buttonText {
+      display: none; /* Hide button text */
+    }
+  
+    .sidebarFooter {
+      flex-grow: 0;
+    }
+  
+    .mainContent {
+      padding: 1rem; /* Less padding on mobile */
+    }
+  
+    .header {
+        font-size: 1.8rem;
+    }
+  }
+
+/* styles/Home.module.css - Additions */
+
+.menu ul li button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s, color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.menu ul li button:hover {
+    background: var(--hover-bg);
+}
+
+.menu ul li button.active {
+    background: var(--active-menu-bg);
+    font-weight: bold;
+}
+
+.sidebarFooter {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: background 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.themeToggleBtn {
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.menuButton:hover,
+.themeToggleBtn:hover {
+    background: var(--hover-bg);
+}
